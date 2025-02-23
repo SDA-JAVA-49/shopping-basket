@@ -18,8 +18,6 @@ public class BasketRepository {
     }
 
     public List<Product> getProducts() {
-        List<Product> result = new LinkedList<>();
-        Collections.copy(result, products);
-        return result;
+        return new LinkedList<>(products);
     }
 }

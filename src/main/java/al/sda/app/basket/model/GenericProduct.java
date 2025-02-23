@@ -8,6 +8,11 @@ public class GenericProduct implements Product{
     private Supplier<Double> getPrice;
     private Function<LocalDate, Boolean> isAvailable;
 
+    public GenericProduct(Supplier<Double> getPrice, Function<LocalDate, Boolean> isAvailable) {
+        this.getPrice = getPrice;
+        this.isAvailable = isAvailable;
+    }
+
     @Override
     public Double getPrice() {
         return getPrice.get();
@@ -17,4 +22,5 @@ public class GenericProduct implements Product{
     public boolean isAvailable(LocalDate date) {
         return isAvailable.apply(date);
     }
+
 }
